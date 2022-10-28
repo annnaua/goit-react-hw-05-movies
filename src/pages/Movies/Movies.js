@@ -5,7 +5,7 @@ import { useSearchParams } from 'react-router-dom';
 import { getMovieByQuery } from '../../services/api';
 
 import { SearchForm } from 'components/SearchForm/SearchForm';
-import { MoviesByQuery } from 'components/MoviesByQuery/MoviesByQuery';
+import { MoviesByQuery } from 'pages/MoviesByQuery/MoviesByQuery';
 
 export default function Movies() {
   const [movies, setMovies] = useState([]);

@@ -93,11 +93,18 @@ export default function MovieDetails() {
 
       <LinkContainer>
         <li>
-          <Link to="cast">Casts</Link>
+          <Link to="cast" state={location.state?.from ? location.state : '/'}>
+            Casts
+          </Link>
         </li>
 
         <li>
-          <Link to="reviews">Reviews</Link>
+          <Link
+            to="reviews"
+            state={location.state?.from ? location.state : '/'}
+          >
+            Reviews
+          </Link>
         </li>
       </LinkContainer>
 
