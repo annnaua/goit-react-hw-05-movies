@@ -4,8 +4,9 @@ import { useSearchParams } from 'react-router-dom';
 import { Form, SearchField, SearchButton } from './SearchForm.styled';
 
 export const SearchForm = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [, setSearchParams] = useSearchParams({});
+  const [searchParams, setSearchParams] = useSearchParams({ query: '' });
+  const query = searchParams.get('query');
+  const [searchQuery, setSearchQuery] = useState(query);
 
   const handleQueryChange = e => {
     setSearchQuery(e.target.value.toLowerCase());
@@ -19,7 +20,6 @@ export const SearchForm = () => {
     }
 
     setSearchParams({ query: `${searchQuery}` });
-    setSearchQuery('');
   };
 
   return (
